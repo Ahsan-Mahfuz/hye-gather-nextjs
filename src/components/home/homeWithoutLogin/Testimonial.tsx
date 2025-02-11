@@ -48,7 +48,6 @@ const Testimonial = () => (
         slidesToShow={3}
         autoplaySpeed={1200}
         autoplay
-
         responsive={[
           {
             breakpoint: 1524,
@@ -76,7 +75,7 @@ const Testimonial = () => (
       >
         {TestimonialData.map((data) => (
           <div key={data.id} style={contentStyle}>
-            <div className="ml-5 testimonial-item ">
+            <div className="ml-5 testimonial-item bg-gray-100 p-3 ">
               <Image
                 src={data.img}
                 alt={data.name}
