@@ -71,7 +71,7 @@ const Testimonial = () => (
             },
           },
         ]}
-        className=" flex items-center p-10 justify-center gap-10  w-full mx-auto  text-black"
+        className=" flex items-center justify-center gap-10  w-full mx-auto  text-black"
       >
         {TestimonialData.map((data) => (
           <div key={data.id} style={contentStyle}>
