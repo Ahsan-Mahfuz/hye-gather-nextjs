@@ -12,23 +12,23 @@ const RoleSelection = () => {
 
       <div className="grid md:grid-cols-2 gap-6 max-w-7xl max-sm:max-w-full w-full   rounded-lg ">
         <div
-          className=" rounded-lg p-6 flex flex-col justify-between items-center bg-gray-100"
-          style={{
-            backgroundImage: `url(${'/roleVendor.png'})`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-          }}
+          className=" rounded-lg p-6 flex flex-col justify-between items-center shadow-md"
+          // style={{
+          //   backgroundImage: `url(${'/roleVendor.png'})`,
+          //   backgroundSize: 'contain',
+          //   backgroundPosition: 'center',
+          // }}
         >
           <div>
             <h3 className="text-3xl max-md:text-2xl m-10 text-center font-semibold text-gray-900">
               Become a Vendor
             </h3>
-            <p className="text-gray-600 text-sm text-center mt-2">
+            <p className=" text-sm text-center mt-2">
               Join us as a vendor to showcase your services and connect with
               potential clients. Grow your business by managing bookings,
               receiving reviews, and handling payments—all in one place.
             </p>
-            <ul className="text-gray-700 mt-4 space-y-2">
+            <ul className="mt-4 space-y-2">
               <li className="flex items-center">
                 <span className="text-blue-800 mr-2 text-2xl ">🔹</span> Create
                 and manage your listings.
@@ -54,22 +54,22 @@ const RoleSelection = () => {
         </div>
 
         <div
-          className=" rounded-lg p-6 flex flex-col justify-between items-center bg-gray-100"
-          style={{
-            backgroundImage: `url(${'/roleUser.png'})`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-          }}
+          className=" rounded-lg p-6 flex flex-col justify-between items-center  shadow-md"
+          // style={{
+          //   backgroundImage: `url(${'/roleUser.png'})`,
+          //   backgroundSize: 'contain',
+          //   backgroundPosition: 'center',
+          // }}
         >
           <div>
             <h3 className="text-3xl text-center font-semibold text-gray-900 m-10 max-md:text-2xl ">
               Find a Vendor
             </h3>
-            <p className="text-gray-600 text-sm text-center mt-2">
+            <p className="text-sm text-center mt-2">
               Looking for top-rated vendors? Sign up as a customer to search,
               compare, and book professionals for your next event with ease.
             </p>
-            <ul className="text-gray-700 mt-4 space-y-2">
+            <ul className=" mt-4 space-y-2">
               <li className="flex items-center">
                 <span className="text-blue-500 text-2xl mr-2">🔹</span> Search
                 and compare vendors.

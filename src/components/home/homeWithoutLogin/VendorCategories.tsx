@@ -23,7 +23,7 @@ const VendorCategories = () => {
           </p>
         </div>
         <Link
-          href={'/vendors'}
+          href={'/explore-vendors'}
           className="flex flex-wrap justify-center  max-md:gap-0 gap-3 mt-5 "
         >
           {categories.map((category) => (

@@ -50,7 +50,7 @@ const HeroPage = () => {
 
           <div className="mt-7">
             <Link
-              href={'/home'}
+              href={'/sign-in'}
               className="text-white p-4 max-md:text-xs rounded-lg poppins  bg-blue-800 hover:bg-blue-700 max-lg:text-sm transition-all duration-300"
             >
               Get started

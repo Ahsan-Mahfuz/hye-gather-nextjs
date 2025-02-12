@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const eventData = [
   {
@@ -114,7 +115,9 @@ const EventCard = ({
   return (
     <div
       className={`flex ${
-        id % 2 === 0 ? 'flex-row-reverse justify-between ' : 'flex-row gap-10 max-md:gap-0'
+        id % 2 === 0
+          ? 'flex-row-reverse justify-between '
+          : 'flex-row gap-10 max-md:gap-0'
       }  items-center  p-6 } max-md:flex-col w-full`}
     >
       <Image
@@ -137,9 +140,11 @@ const EventCard = ({
             </li>
           ))}
         </ul>
-        <button className="mt-4 px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-700 cursor-pointer">
-          Learn more
-        </button>
+        <Link href={'/sign-in'}>
+          <button className="mt-4 px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-700 cursor-pointer">
+            Learn more
+          </button>
+        </Link>
       </div>
     </div>
   )

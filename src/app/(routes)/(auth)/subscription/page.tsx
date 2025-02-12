@@ -1,7 +1,7 @@
-import React from 'react'
+'use client'
 import { useState } from 'react'
-import subscribe from '../../assets/subscribe.png'
-import { Link } from 'react-router-dom'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Subscription = () => {
   const [plan, setPlan] = useState('monthly')
@@ -9,10 +9,12 @@ const Subscription = () => {
   return (
     <div className="flex ">
       <div className="w-1/2  max-lg:hidden">
-        <img
-          src={subscribe}
+        <Image
+          src="/subscribe.png"
           alt="Login"
           className="w-full h-full object-cover"
+          width={5000}
+          height={50}
         />
       </div>
       <div className="w-1/2 flex flex-col max-lg:w-full items-center justify-center min-h-screen  px-4">
@@ -32,7 +34,7 @@ const Subscription = () => {
                 plan === 'monthly'
                   ? 'bg-blue-800 text-white shadow'
                   : 'bg-gray-200'
-              }`}
+              } transition-all duration-700`}
               onClick={() => setPlan('monthly')}
             >
               Monthly
@@ -50,14 +52,15 @@ const Subscription = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-lg font-semibold flex gap-2 ">
               {plan === 'monthly' ? 'Monthly Plan' : 'Yearly Plan'}
+              {plan === 'monthly' && (
+                <span className="bg-blue-100 text-blue-600 px-2 py-1 text-xs flex items-center rounded-full">
+                  Popular
+                </span>
+              )}
             </h3>
-            {plan === 'monthly' && (
-              <span className="bg-blue-100 text-blue-600 px-2 py-1 text-xs rounded-full">
-                Popular
-              </span>
-            )}
+
             <p className="text-2xl font-bold  text-blue-600 mt-2">
               ${plan === 'monthly' ? '29' : '290'}
               {plan === 'monthly' ? '/month' : '/year'}
@@ -85,7 +88,7 @@ const Subscription = () => {
             </ul>
 
             <button className="cursor-pointer mt-6 w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-              <Link to={'/payment'}>Subscribe Now</Link>
+              <Link href={'/payment'}>Subscribe Now</Link>
             </button>
           </div>
         </div>

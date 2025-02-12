@@ -96,13 +96,13 @@ const CustomizeEvent = () => {
 
           <div className="flex gap-2">
             <Link
-              href="/home"
+              href="/sign-in"
               className="text-white p-4 max-md:text-xs rounded-lg poppins  bg-blue-800 hover:bg-blue-700 max-lg:text-sm transition-all duration-300"
             >
               Get started
             </Link>
             <Link
-              href="/home"
+              href="/explore-vendors"
               className="max-md:text-xs p-4  font-bold  poppins bg-cyan-300 rounded-lg hover:bg-blue-200 transition-all duration-300"
             >
               Learn More →

@@ -15,6 +15,7 @@ const SignUp = () => {
   const role = searchParams.get('role')
 
   useEffect(() => {
+    console.log(role)
     if (role !== 'vendor' && role != 'customer') {
       router.push('/choose-role')
     }
