@@ -1,34 +1,43 @@
-import React from 'react'
+'use client'
+
 import { Form, Input, Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
-import rightSideImage from '../../assets/forgetPassword.png'
+import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import toast from 'react-hot-toast'
 
 const ForgetPassword = () => {
-  const navigate = useNavigate()
-  const onFinish = (values) => {
+  const router = useRouter()
+
+  type FormData = {
+    email: string
+  }
+  const onFinish = (values: FormData) => {
     console.log('Received values of form: ', values)
-    navigate('/otp-sent')
+    toast.success('Email Otp sent successfully! Check your email')
+    router.push('/check-email-for-the-otp')
   }
 
   return (
-    <div className="h-screen flex  flex-col lg:flex-row z-50">
+    <div className="h-screen flex items-center justify-center  flex-col lg:flex-row s">
       <div className="w-1/2 hidden lg:block">
-        <img
-          src={rightSideImage}
+        <Image
+          src={'/forgetPassword.png'}
           alt="password-reset"
           className="w-full h-full object-cover"
+          width={5000}
+          height={50}
         />
       </div>
-      <div className="w-1/2 max-lg:w-full h-screen  flex flex-col justify-center items-center p-12  ">
+      <div className="w-1/2  max-lg:w-full h-screen  flex flex-col justify-center items-center  ">
         <h1
-          className="text-[50px] font-bold mb-2 text-center"
-          style={{ fontSize: 'clamp(20px, 10vw, 50px)' }}
+          className="font-bold  text-center"
+          style={{ fontSize: 'clamp(20px, 8vw, 40px)' }}
         >
           Forgot Password?
         </h1>
         <p
-          className="text-lg mb-8 text-center"
-          style={{ fontSize: 'clamp(12px, 5vw, 20px)' }}
+          className=" mb-8  text-center text-gray-600"
+          style={{ fontSize: 'clamp(10px, 5vw, 16px)' }}
         >
           Please enter your email to get verification code
         </p>
@@ -37,7 +46,7 @@ const ForgetPassword = () => {
           requiredMark={false}
           layout="vertical"
           onFinish={onFinish}
-          className="w-full max-w-sm"
+          className="w-full max-w-md"
         >
           <Form.Item
             name="email"
@@ -55,7 +64,7 @@ const ForgetPassword = () => {
           >
             <Input
               placeholder="Enter Email"
-              className="h-[42px]  px-4 bg-black border-gray-300 rounded-md"
+              className="h-[42px]  border-gray-300 rounded-md"
             />
           </Form.Item>
 
@@ -68,7 +77,7 @@ const ForgetPassword = () => {
               }}
               className="w-full rounded-full h-11 mt-10"
             >
-              Reset password
+              Continue
             </Button>
           </Form.Item>
         </Form>

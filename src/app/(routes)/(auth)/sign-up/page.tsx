@@ -7,6 +7,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import toast from 'react-hot-toast'
 
 const SignUp = () => {
   const router = useRouter()
@@ -28,6 +29,7 @@ const SignUp = () => {
 
   const onFinish = (values: FormData) => {
     console.log('Received values of form: ', values)
+    toast.success('Account created successfully!')
     if (role === 'customer') {
       router.push('/sign-in')
     } else if (role === 'vendor') {
@@ -36,10 +38,10 @@ const SignUp = () => {
   }
 
   return (
-    <div className="h-screen flex  flex-col lg:flex-row">
+    <div className="h-screen flex items-center justify-center  flex-col lg:flex-row">
       <div className="w-1/2 hidden lg:block">
         <Image
-          src="/logIn.png"
+          src="/signUp.png"
           alt="Login"
           className="w-full h-full object-cover"
           width={5000}
@@ -187,7 +189,7 @@ const SignUp = () => {
             </Button>
           </Form.Item>
         </Form>
-        <div className="  text-xs">
+        <div className="  text-gray-600 text-xs">
           Already have an account?{' '}
           <Link href="/sign-in" className=" hover:underline text-blue-800">
             Sign In

@@ -1,36 +1,45 @@
-import React from 'react'
-import { Form, Input, Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
-import rightSideImage from '../../assets/forgetPassword.png'
+'use client'
 
+import { Form, Input, Button } from 'antd'
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import toast from 'react-hot-toast'
 
 const SetANewPassword = () => {
-  const navigate = useNavigate()
-  const onFinish = (values) => {
+  const router = useRouter()
+
+  type FormData = {
+    password: string
+    confirm: string
+  }
+  const onFinish = (values: FormData) => {
     console.log('Received values of form: ', values)
-    navigate('/sign-in')
+    toast.success('Set new password successfully!')
+    router.push('/sign-in')
   }
 
   return (
     <div className="h-screen flex  flex-col lg:flex-row ">
       <div className="w-1/2 hidden lg:block">
-        <img
-          src={rightSideImage}
+        <Image
+          src="/forgetPassword.png"
           alt="password-reset"
           className="w-full h-full object-cover"
+          width={5000}
+          height={50}
         />
       </div>
       <div className="w-full lg:w-1/2 h-screen  flex flex-col justify-center items-center p-12">
         <h1
-          className="text-[50px] font-bold mb-2 text-center"
-          style={{ fontSize: 'clamp(20px, 10vw, 50px)' }}
+          className="font-bold  text-center"
+          style={{ fontSize: 'clamp(20px, 8vw, 40px)' }}
         >
           Set new Password
         </h1>
         <p
-          className="text-lg mb-8 text-center"
-          style={{ fontSize: 'clamp(12px, 5vw, 20px)' }}
+          className=" mb-8 text-center text-gray-600 max-w-lg"
+          style={{ fontSize: 'clamp(10px, 5vw, 20px)' }}
         >
           Create a new password. Ensure it differs from previous ones for
           security

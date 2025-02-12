@@ -5,6 +5,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 const SignIn = () => {
   const router = useRouter()
@@ -15,14 +16,15 @@ const SignIn = () => {
   }
   const onFinish = (values: FormData) => {
     console.log('Received values of form: ', values)
+    toast.success('Login successful!')
     router.push('/user/home') // '/user/home' , '/vendor/home'
   }
 
   return (
-    <div className=" h-screen flex  flex-col lg:flex-row   ">
+    <div className="flex flex-col lg:flex-row   ">
       <div className="w-1/2 hidden lg:block">
         <Image
-          src="/signUp.png"
+          src="/logIn.png"
           alt="Login"
           className="w-full h-full object-cover"
           width={5000}
@@ -92,10 +94,7 @@ const SignIn = () => {
           <div className="text-end -mt-4">
             <Link
               href={`/forget-password`}
-              className=" text-md text-black"
-              style={{
-                textDecoration: 'underline',
-              }}
+              className=" text-md  text-blue-600 hover:underline"
             >
               Forget password
             </Link>
@@ -114,7 +113,7 @@ const SignIn = () => {
             </Button>
           </Form.Item>
         </Form>
-        <div className="  text-xs">
+        <div className="  text-gray-600 text-xs">
           Don't have an account?{' '}
           <Link
             href={`/choose-role`}
