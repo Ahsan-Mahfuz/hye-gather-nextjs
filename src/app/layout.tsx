@@ -1,8 +1,21 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Poppins } from 'next/font/google'
+import {
+  Geist,
+  Geist_Mono,
+  Poppins,
+  Cedarville_Cursive,
+} from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
+import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/footer/Footer'
 
+// const cursive = Cedarville_Cursive({
+//   variable: '--font-cedarville-cursive',
+//   subsets: ['latin'],
+//   weight: ['400'],
+//   display: 'swap',
+// })
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
@@ -35,10 +48,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable}  ${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between  `}
       >
-        {children}
+        <Navbar />
+
+        <div className=" min-h-screen">{children}</div>
         <Toaster />
+        <Footer />
       </body>
     </html>
   )

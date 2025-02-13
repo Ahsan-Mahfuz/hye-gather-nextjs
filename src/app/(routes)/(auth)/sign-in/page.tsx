@@ -17,7 +17,7 @@ const SignIn = () => {
   const onFinish = (values: FormData) => {
     console.log('Received values of form: ', values)
     toast.success('Login successful!')
-    router.push('/user/home') // '/user/home' , '/vendor/home'
+    router.push('/user-home') // '/user-home' , '/vendor-home'
   }
 
   return (

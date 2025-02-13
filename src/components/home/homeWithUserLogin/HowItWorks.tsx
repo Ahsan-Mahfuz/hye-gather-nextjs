@@ -1,4 +1,3 @@
-import React from 'react'
 const HowItWorks = () => {
   const steps = [
     {
@@ -35,7 +34,7 @@ const HowItWorks = () => {
 
   return (
     <div className="responsive-width  ">
-      <section className=" mx-auto">
+      <section className=" mx-auto mt-32 mb-40">
         <h2 className=" text-center text-3xl font-bold text-gray-900 mb-10">
           How It Works
         </h2>

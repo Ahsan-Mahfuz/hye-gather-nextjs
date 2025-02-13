@@ -60,11 +60,11 @@ const HeroPage = () => {
       </section>
 
       {/* right section */}
-      <section className="max-lg:w-none">
+      <section className="max-lg:w-none ">
         <Image
           src="/heroPageRightPicture.png"
           alt="heroPageRightPicture"
-          className=""
+          className="max-lg:w-[500px] w-[800px]"
           width={800}
           height={800}
         />

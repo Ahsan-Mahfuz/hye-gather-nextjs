@@ -6,7 +6,6 @@ const categories = [
   { name: 'Event Planners', image: '/Frame-3.png' },
   { name: 'Decorators', image: '/Frame-4.png' },
   { name: 'Caterers', image: '/Frame-5.png' },
-  { name: 'Photographers', image: '/Frame-6.png' },
   { name: 'DJs', image: '/Frame.png' },
 ]
 
@@ -36,7 +35,7 @@ const VendorCategories = () => {
                 backgroundRepeat: 'no-repeat',
                 width: '350px',
               }}
-              className=" min-h-[200px] max-md:min-h-[200px]  flex items-center justify-center"
+              className=" h-[200px]  flex items-center justify-center"
             >
               <div className="text-black  max-md:text-[17px] font-bold text-xl  bg-opacity-50 p-2 rounded -mt-5 -rotate-[55deg] mr-40">
                 {category.name}

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <div>
+    <div className='px-5'>
       <HeroPage />
       <CustomizeEvent />
       <VendorCategories />

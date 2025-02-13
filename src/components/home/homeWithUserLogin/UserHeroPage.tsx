@@ -1,15 +1,10 @@
-import React from 'react'
-
-import djs from '../../../assets/DJs.jpg'
-import bar from '../../../assets/Bar.jpg'
-import food from '../../../assets/food.jpg'
-import photography from '../../../assets/Photography.jpg'
+import Image from 'next/image'
 
 const UserHeroPage = () => {
   return (
-    <div className="responsive-width flex flex-col xl:flex-row gap-10 items-center justify-between h-screen  ">
+    <div className="responsive-width flex flex-col xl:flex-row gap-10 items-center justify-between   ">
       {/* Left Side - Text & Search */}
-      <div className="max-w-xl ">
+      <div className="max-w-xl mt-20">
         <h1 className="text-3xl font-bold text-gray-900">
           Plan Your Dream Event Effortlessly!
         </h1>
@@ -33,42 +28,50 @@ const UserHeroPage = () => {
           </li>
         </ul>
 
-        <div className="mt-6 flex w-full max-w-md">
+        <div className="mt-6 max-sm:flex  max-sm:flex-col gap-1">
           <input
             type="text"
-            className="flex-1 px-4 py-3 rounded-l-lg bg-white text-gray-700 focus:outline-none"
+            className=" px-4 py-3 rounded-l-lg max-sm:rounded-lg  bg-white text-gray-700 focus:outline-none border"
             placeholder="type here ..."
           />
-          <button className="px-6 py-3 bg-blue-600 text-white rounded-r-lg font-semibold hover:bg-blue-700 transition">
+          <button className="px-1 py-3 max-sm:w-full bg-blue-600  text-white rounded-r-lg font-semibold hover:bg-blue-700 transition">
             Search
           </button>
         </div>
       </div>
 
       {/* Right Side - Images */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 mt-20">
         <div className="flex justify-end max-md:items-center max-md:justify-center items-end gap-3">
-          <img
-            src={djs}
+          <Image
+            src="/DJs.jpg"
             alt="Bartender"
             className="max-w-72 w-full h-72 rounded-lg shadow-md object-cover"
+            width={5000}
+            height={50}
           />
-          <img
-            src={bar}
+          <Image
+            src="/Bar.jpg"
             alt="DJ"
             className="max-w-52 w-full h-52 rounded-lg shadow-md object-cover max-md:hidden "
+            width={5000}
+            height={50}
           />
         </div>
         <div className="flex justify-start max-md:items-center max-md:justify-center items-start gap-3">
-          <img
-            src={food}
+          <Image
+            src="/food.jpg"
             alt="Chef"
             className="max-w-52 w-full h-52 rounded-lg shadow-md object-cover max-md:hidden"
+            width={5000}
+            height={50}
           />
-          <img
-            src={photography}
+          <Image
+            src="/Photography.jpg"
             alt="Photographer"
             className="max-w-72 w-full h-72  rounded-lg shadow-md object-cover "
+            width={5000}
+            height={50}
           />
         </div>
       </div>
