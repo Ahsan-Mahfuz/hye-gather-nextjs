@@ -1,10 +1,11 @@
+'use client'
+
 import { Carousel, Modal, Tabs } from 'antd'
 import Image from 'next/image'
 import { useState } from 'react'
 import { IoImages } from 'react-icons/io5'
-import Reviews from '../reviews/Reviews'
 
-const VendorTabs = () => {
+const MyBookings = () => {
   const [activeTab, setActiveTab] = useState('1')
 
   const handleTabChange = (key: string) => {
@@ -14,7 +15,7 @@ const VendorTabs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const showModal = () => {
-    setIsModalOpen(true) 
+    setIsModalOpen(true)
   }
 
   const handleOk = () => {
@@ -36,7 +37,7 @@ const VendorTabs = () => {
   const tabItems = [
     {
       key: '1',
-      label: 'About',
+      label: 'Ongoing',
       children: (
         <div>
           <div className="text-lg font-semibold ">About</div>
@@ -62,7 +63,7 @@ const VendorTabs = () => {
     },
     {
       key: '2',
-      label: 'Photos',
+      label: 'Requests',
       children: (
         <div>
           <div className="text-lg font-semibold ">Photos</div>
@@ -101,7 +102,7 @@ const VendorTabs = () => {
     },
     {
       key: '3',
-      label: 'Services',
+      label: 'Booking Response',
       children: (
         <div>
           <div className="text-lg font-semibold ">Services</div>
@@ -142,13 +143,90 @@ const VendorTabs = () => {
     },
     {
       key: '4',
-      label: 'Reviews',
-      children: <Reviews />,
+      label: 'Completed',
+      children: (
+        <div>
+          <div className="text-lg font-semibold ">Services</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2 font-bold">Entertainment</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2  font-bold">Entertainment</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2  font-bold">Entertainment</p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      key: '5',
+      label: 'Canceled',
+      children: (
+        <div>
+          <div className="text-lg font-semibold ">Services</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2 font-bold">Entertainment</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2  font-bold">Entertainment</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="/Entertainment.jpg"
+                alt="entertainment"
+                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+                width={4000}
+                height={100}
+              />
+              <p className="text-center mt-2  font-bold">Entertainment</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
   ]
 
   return (
-    <div className="max-w-[700px] p-6 bg-white rounded-lg shadow-md space-y-6 poppins mb-20">
+    <div className="responsive-width px-2 pt-5 bg-white rounded-lg  space-y-6 poppins mb-20">
       <Tabs
         activeKey={activeTab}
         onChange={handleTabChange}
@@ -178,4 +256,4 @@ const VendorTabs = () => {
   )
 }
 
-export default VendorTabs
+export default MyBookings
