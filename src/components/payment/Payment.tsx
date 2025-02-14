@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 
-const PaymentForm = () => {
+const Payment = () => {
   const [showPromo, setShowPromo] = useState(false)
   const [formData, setFormData] = useState({
     amount: '',
@@ -30,11 +30,15 @@ const PaymentForm = () => {
 
   const handleSubmit = () => {
     console.log(formData)
+    setFormData({
+      amount: '',
+      promoCode: '',
+    })
     toast.success('Payment information submitted!')
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div className="mx-auto bg-white p-6 rounded-lg ">
       <h2 className="text-2xl font-semibold mb-4 text-center">
         Payment Information
       </h2>
@@ -92,4 +96,4 @@ const PaymentForm = () => {
   )
 }
 
-export default PaymentForm
+export default Payment

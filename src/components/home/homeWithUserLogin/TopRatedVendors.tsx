@@ -71,8 +71,9 @@ const vendors: Vendor = [
 ]
 const TopRatedVendors = () => {
   return (
-    <div className=" mt-50 ">
-      <div className="responsive-width flex items-center justify-center flex-wrap gap-10">
+    <div className=" mt-50 responsive-width ">
+      <p className="font-bold text-3xl mb-10 text-center">This Week's Top-Rated Vendors</p>
+      <div className="responsive-width flex items-center justify-start flex-wrap gap-10">
         {vendors.map((vendor, index) => (
           <Card key={index} {...vendor} />
         ))}

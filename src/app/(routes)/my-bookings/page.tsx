@@ -1,9 +1,137 @@
 'use client'
 
-import { Carousel, Modal, Tabs } from 'antd'
-import Image from 'next/image'
+import MyBookingsCard from '@/components/myBookings/MyBookingsCard'
+import { Tabs } from 'antd'
 import { useState } from 'react'
-import { IoImages } from 'react-icons/io5'
+
+type Client = {
+  id: number
+  bookingType: string
+  image: string
+  name: string
+  email: string
+  phone: string
+  bookingFor: string
+  selectServices: string[]
+  eventName?: string
+  eventLocation?: string
+  eventTime?: string
+  numberOfGuests?: number
+  eventDuration?: string
+  additionalRequirements?: string
+  additionalNote?: string
+  amountPaid?: string
+  timeLeft?: string
+}[]
+
+const Clients: Client = [
+  {
+    id: 1,
+    bookingType: 'ongoing',
+    image: '/entertainment.jpg',
+    name: 'Ahsan Mahfuz',
+    email: 'YlYHw@example.com',
+    phone: '+27 55745 2567 125',
+    bookingFor: 'weeding',
+    selectServices: ['Music', 'Dance', 'Party'],
+
+    eventName: 'Weeding Party',
+    eventLocation: 'New York',
+    eventTime: '10:00 AM',
+    numberOfGuests: 100,
+    eventDuration: '2 hours',
+    additionalRequirements:
+      'I need a special stage for the performers. Please arrange that.',
+    additionalNote: 'Please make sure to bring your own food and drinks.',
+    amountPaid: '',
+    timeLeft: '2 day 14 hours 45 minutes',
+  },
+  {
+    id: 2,
+    bookingType: 'requested',
+    image: '/DJs.jpg',
+    name: 'Jasmine Lawrence',
+    email: 'example@example.com',
+    phone: '+1 234 567 890',
+    bookingFor: 'corporate event',
+    selectServices: ['Music', 'DJ', 'Sound System'],
+
+    eventName: 'Corporate Event',
+    eventLocation: 'Los Angeles',
+    eventTime: '1:00 PM',
+    numberOfGuests: 50,
+    eventDuration: '3 hours',
+    additionalRequirements:
+      'I need a special stage for the performers. Please arrange that.',
+    additionalNote: 'Please make sure to bring your own food and drinks.',
+    amountPaid: '',
+    timeLeft: '',
+  },
+  {
+    id: 3,
+    bookingType: 'paymentRequest',
+    image: '/Bar.jpg',
+    name: 'Michael Smith',
+    email: 'example@example.com',
+    phone: '+1 234 567 891',
+    bookingFor: 'birthday party',
+    selectServices: ['Drinks', 'Bartending', 'Cocktails'],
+
+    eventName: 'Birthday Party',
+    eventLocation: 'San Francisco',
+    eventTime: '8:00 PM',
+    numberOfGuests: 150,
+    eventDuration: '4 hours',
+    additionalRequirements:
+      'I need a special stage for the performers. Please arrange that.',
+    additionalNote: 'Please make sure to bring your own food and drinks.',
+    amountPaid: '$500',
+    timeLeft: '',
+  },
+  {
+    id: 4,
+    bookingType: 'completed',
+    image: '/food.jpg',
+    name: 'Sophia Brown',
+    email: 'example@example.com',
+    phone: '+1 234 567 892',
+    bookingFor: 'wedding',
+    selectServices: ['Catering', 'Desserts', 'Buffet'],
+
+    eventName: 'Wedding Reception',
+    eventLocation: 'New York',
+    eventTime: '12:00 PM',
+    numberOfGuests: 200,
+    eventDuration: '6 hours',
+    additionalRequirements:
+      'I need a special stage for the performers. Please arrange that.',
+    additionalNote: 'Please make sure to bring your own food and drinks.',
+    amountPaid: '$1000',
+    timeLeft: '',
+  },
+
+  {
+    id: 5,
+    bookingType: 'canceled',
+    image: '/Photography.jpg',
+    name: 'Liam Johnson',
+    email: 'example@example.com',
+    phone: '+1 234 567 893',
+    bookingFor: 'concert',
+    selectServices: ['Photography', 'Videography', 'Editing'],
+
+    eventName: 'Concert',
+    eventLocation: 'Los Angeles',
+    eventTime: '6:00 PM',
+    numberOfGuests: 100,
+    eventDuration: '3 hours',
+    additionalRequirements:
+      'I need a special stage for the performers. Please arrange that.',
+    additionalNote: 'Please make sure to bring your own food and drinks.',
+    amountPaid: '',
+    timeLeft: '',
+  },
+]
 
 const MyBookings = () => {
   const [activeTab, setActiveTab] = useState('1')
@@ -12,52 +140,21 @@ const MyBookings = () => {
     setActiveTab(key)
   }
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const showModal = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleOk = () => {
-    setIsModalOpen(false)
-  }
-
-  const handleCancel = () => {
-    setIsModalOpen(false)
-  }
-
-  const images = [
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-  ]
-
   const tabItems = [
     {
       key: '1',
       label: 'Ongoing',
       children: (
         <div>
-          <div className="text-lg font-semibold ">About</div>
-          <p>
-            [Vendor Name] is a premium food vendor specializing in catering for
-            events of all sizes. We offer a diverse menu featuring fresh,
-            high-quality ingredients, ensuring a delightful culinary experience.
-            From weddings to corporate gatherings, our team delivers exceptional
-            service with customizable options to match your event's needs.
-          </p>
-          <div className="mt-4">
-            <strong className="text-lg font-semibold ">Overview</strong>
-            <p>56 Bookings on HYE GATHER</p>
-          </div>
-          <div className="mt-4">
-            <strong className="text-lg font-semibold ">Ratings</strong>
-            <p>
-              <span className="text-yellow-600">4.8 ratings</span> - 128 Reviews
-            </p>
-          </div>
+          <div className="text-lg font-semibold ">Your Ongoing Activities</div>
+          {Clients.map(
+            (client, index) =>
+              client.bookingType === 'ongoing' && (
+                <div key={index}>
+                  <MyBookingsCard {...client} />
+                </div>
+              )
+          )}
         </div>
       ),
     },
@@ -66,78 +163,32 @@ const MyBookings = () => {
       label: 'Requests',
       children: (
         <div>
-          <div className="text-lg font-semibold ">Photos</div>
-          <div className="flex gap-5 items-center justify-center flex-wrap mt-4">
-            <Image
-              src="/Entertainment.jpg"
-              alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-              width={4000}
-              height={100}
-            />
-            <Image
-              src="/Entertainment.jpg"
-              alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-              width={4000}
-              height={100}
-            />
-            <Image
-              src="/Entertainment.jpg"
-              alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-              width={4000}
-              height={100}
-            />
-            <div
-              onClick={showModal}
-              className="max-sm:max-w-[200px] h-[250px] flex flex-col font-bold items-center justify-center max-w-[250px] w-full object-cover object-center rounded-lg bg-gray-200"
-            >
-              <IoImages className="text-5xl text-red-800" />
-              View All Images
-            </div>
-          </div>
+          <div className="text-lg font-semibold ">Your Ongoing Activities</div>
+          {Clients.map(
+            (client, index) =>
+              client.bookingType === 'requested' && (
+                <div key={index}>
+                  <MyBookingsCard {...client} />
+                </div>
+              )
+          )}
         </div>
       ),
     },
     {
       key: '3',
-      label: 'Booking Response',
+      label: <div className="text-red-700">Payment Request</div>,
       children: (
         <div>
-          <div className="text-lg font-semibold ">Services</div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2 font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-          </div>
+          <div className="text-lg font-semibold ">Your Ongoing Activities</div>
+          {Clients.map(
+            (client, index) =>
+              client.bookingType === 'paymentRequest' && (
+                <div key={index}>
+                  <MyBookingsCard {...client} />
+                </div>
+              )
+          )}
         </div>
       ),
     },
@@ -146,39 +197,15 @@ const MyBookings = () => {
       label: 'Completed',
       children: (
         <div>
-          <div className="text-lg font-semibold ">Services</div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2 font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-          </div>
+          <div className="text-lg font-semibold ">Your Ongoing Activities</div>
+          {Clients.map(
+            (client, index) =>
+              client.bookingType === 'completed' && (
+                <div key={index}>
+                  <MyBookingsCard {...client} />
+                </div>
+              )
+          )}
         </div>
       ),
     },
@@ -187,39 +214,15 @@ const MyBookings = () => {
       label: 'Canceled',
       children: (
         <div>
-          <div className="text-lg font-semibold ">Services</div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2 font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/Entertainment.jpg"
-                alt="entertainment"
-                className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
-                width={4000}
-                height={100}
-              />
-              <p className="text-center mt-2  font-bold">Entertainment</p>
-            </div>
-          </div>
+          <div className="text-lg font-semibold ">Your Ongoing Activities</div>
+          {Clients.map(
+            (client, index) =>
+              client.bookingType === 'canceled' && (
+                <div key={index}>
+                  <MyBookingsCard {...client} />
+                </div>
+              )
+          )}
         </div>
       ),
     },
@@ -233,25 +236,6 @@ const MyBookings = () => {
         className="!border-b-0 poppins"
         items={tabItems}
       />
-      <Modal
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        centered
-      >
-        <Carousel arrows infinite={false}>
-          {images.map((image, i) => (
-            <Image
-              key={i}
-              src={image}
-              alt="vendor"
-              className="object-cover  object-center rounded-lg"
-              width={5000}
-              height={300}
-            />
-          ))}
-        </Carousel>
-      </Modal>
     </div>
   )
 }

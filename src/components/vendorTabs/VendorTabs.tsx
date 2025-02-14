@@ -14,7 +14,7 @@ const VendorTabs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const showModal = () => {
-    setIsModalOpen(true) 
+    setIsModalOpen(true)
   }
 
   const handleOk = () => {
@@ -66,31 +66,31 @@ const VendorTabs = () => {
       children: (
         <div>
           <div className="text-lg font-semibold ">Photos</div>
-          <div className="flex gap-5 items-center justify-center flex-wrap mt-4">
+          <div className="flex gap-5 items-center justify-start flex-wrap mt-4">
             <Image
               src="/Entertainment.jpg"
               alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+              className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
               height={100}
             />
             <Image
               src="/Entertainment.jpg"
               alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+              className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
               height={100}
             />
             <Image
               src="/Entertainment.jpg"
               alt="entertainment"
-              className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
+              className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
               height={100}
             />
             <div
               onClick={showModal}
-              className="max-sm:max-w-[200px] h-[250px] flex flex-col font-bold items-center justify-center max-w-[250px] w-full object-cover object-center rounded-lg bg-gray-200"
+              className="cursor-pointer h-[200px] flex flex-col font-bold items-center justify-center max-w-[200px] w-full object-cover object-center rounded-lg bg-gray-200"
             >
               <IoImages className="text-5xl text-red-800" />
               View All Images
