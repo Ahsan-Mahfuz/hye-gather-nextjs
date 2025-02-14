@@ -94,9 +94,9 @@ const MyBookingsCard: React.FC<CardProps> = ({
               </span>
             </div>
             <p className="text-md font-bold mt-4 mb-1">Select Services</p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               {selectServices.map((service, index) => (
-                <div key={index} className="bg-blue-100 rounded-lg p-2 mb-2">
+                <div key={index} className="bg-blue-100 rounded-lg p-2 ">
                   {service}
                 </div>
               ))}

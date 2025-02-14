@@ -150,26 +150,29 @@ const Navbar = () => {
 
               <div>
                 <div className="flex max-md:hidden justify-between items-center gap-10 ">
-                  <Link href="/user-home" className={getLinkClass('/user-home')}>
+                  <Link
+                    href="/user-home"
+                    className={getLinkClass('/user-home')}
+                  >
                     Home
                   </Link>
-                  <Link
-                    href="/vendors"
-                    className={getLinkClass('/vendors')}
-                  >
+                  <Link href="/vendors" className={getLinkClass('/vendors')}>
                     Vendors
                   </Link>
                   <Link
-                    href="/contact-us"
-                    className={getLinkClass('/contact-us')}
+                    href="/my-bookings"
+                    className={getLinkClass('/my-bookings')}
                   >
-                    Contact Us
+                    My Bookings
+                  </Link>
+                  <Link href="/chat" className={getLinkClass('/chat')}>
+                    Messages
                   </Link>
                   <Link
-                    href="/sign-in"
-                    className={`getLinkClass('/sign-in') bg-blue-200 hover:bg-blue-100 p-3 rounded-md`}
+                    href="/profile-settings"
+                    className={getLinkClass('/profile-settings')}
                   >
-                    Get Started
+                    Profile
                   </Link>
                 </div>
 
@@ -206,19 +209,26 @@ const Navbar = () => {
 
                         <li>
                           <Link
-                            href="/contact-us"
+                            href="/my-bookings"
                             className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
-                            Contact Us
+                            My Bookings
                           </Link>
                         </li>
-
                         <li>
                           <Link
-                            href="/sign-in"
+                            href="/chat"
                             className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
-                            Get Started
+                            Messages
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/profile-settings"
+                            className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
+                          >
+                            Profile
                           </Link>
                         </li>
                       </ul>

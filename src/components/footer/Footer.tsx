@@ -57,12 +57,12 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-blue-500">
+              <Link href="/explore-vendors" className="hover:text-blue-500">
                 Explore Vendors
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-blue-500">
+              <Link href="/contact-us" className="hover:text-blue-500">
                 Contact Us
               </Link>
             </li>
@@ -74,17 +74,20 @@ const Footer = () => {
           <h3 className="font-semibold text-blue-500 text-xl">Support</h3>
           <ul className="mt-5 flex flex-col gap-5 ">
             <li>
-              <Link href="/" className="hover:text-blue-500">
+              <Link href="/#faq" className="hover:text-blue-500">
                 FAQ
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-blue-500">
+              <Link
+                href="/terms-and-conditions"
+                className="hover:text-blue-500"
+              >
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link href="/" className="hover:text-blue-500">
+              <Link href="/privacy-and-policy" className="hover:text-blue-500">
                 Privacy Policy
               </Link>
             </li>

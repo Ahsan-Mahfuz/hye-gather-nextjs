@@ -11,7 +11,7 @@ const AskedQuestionWithAnswer = dynamic(
 )
 const FrequentlyAskedQuestion = () => {
   return (
-    <div className="responsive-width ">
+    <div className="responsive-width " id='faq'>
       <div className="  mt-40 rounded-lg flex  flex-col justify-center">
         <h2 className="text-3xl mb-10 font-bold text-center max-md:text-2xl">
           Most Frequently Asked Questions
