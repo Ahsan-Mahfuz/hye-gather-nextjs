@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import Payment from '../payment/Payment'
+import toast from 'react-hot-toast'
 
 interface CardProps {
   id: number
@@ -23,6 +24,7 @@ interface CardProps {
   amountPaid: string
   timeLeft: string
 }
+
 const MyBookingsModel = ({
   id,
   bookingType,
@@ -50,15 +52,14 @@ const MyBookingsModel = ({
 
   const handleSubmit = () => {
     console.log('Review Submitted:', { rating, review })
-    onClose()
+    toast.success('Review submitted successfully!')
+    setIsReviewModalOpen(false)
+    setRating(0)
+    setReview('')
   }
 
   const showModal = () => {
     setIsModalOpen(true)
-  }
-
-  const handleOk = () => {
-    setIsModalOpen(false)
   }
 
   const handleCancel = () => {
@@ -75,6 +76,35 @@ const MyBookingsModel = ({
     setIsPaymentModalOpen(false)
   }
 
+  const [isEditing, setIsEditing] = useState(false)
+
+  const [editedEventName, setEditedEventName] = useState(eventName)
+  const [editedEventLocation, setEditedEventLocation] = useState(eventLocation)
+  const [editedEventTime, setEditedEventTime] = useState(eventTime)
+  const [editedNumberOfGuests, setEditedNumberOfGuests] =
+    useState(numberOfGuests)
+  const [editedEventDuration, setEditedEventDuration] = useState(eventDuration)
+  const [editedAdditionalRequirements, setEditedAdditionalRequirements] =
+    useState(additionalRequirements)
+  const [editedAdditionalNote, setEditedAdditionalNote] =
+    useState(additionalNote)
+
+  const handleSaveChanges = () => {
+    console.log('Updated Booking:', {
+      editedEventName,
+      editedEventLocation,
+      editedEventTime,
+      editedNumberOfGuests,
+      editedEventDuration,
+      editedAdditionalRequirements,
+      editedAdditionalNote,
+    })
+
+    toast.success('Booking updated successfully!')
+    setIsEditing(false)
+    setIsModalOpen(false)
+  }
+
   return (
     <>
       <div
@@ -85,15 +115,18 @@ const MyBookingsModel = ({
       </div>
       <Modal
         title={
-          <div className="flex items-center  mb-5 justify-center text-center text-3xl">
+          <div className="flex items-center mb-5 justify-center text-center text-3xl">
             {bookingType} booking
           </div>
         }
         open={isModalOpen}
-        onOk={handleOk}
         onCancel={handleCancel}
         width={700}
-        okText="Cancel"
+        okButtonProps={{
+          style: {
+            display: 'none',
+          },
+        }}
         cancelText={
           bookingType === 'paymentRequest' ? (
             <div onClick={handlePaymentClick} style={{ color: 'red' }}>
@@ -101,18 +134,21 @@ const MyBookingsModel = ({
             </div>
           ) : bookingType === 'completed' ? (
             <div onClick={() => setIsReviewModalOpen(true)}>Get Rating</div>
-          ) : (
-            'close'
-          )
+          ) : null
         }
         cancelButtonProps={{
           style: {
-            display: bookingType !== 'ongoing' ? 'inline-block' : 'none',
+            display:
+              bookingType !== 'ongoing' &&
+              bookingType !== 'canceled' &&
+              bookingType !== 'requested'
+                ? 'inline-block'
+                : 'none',
           },
         }}
         centered
       >
-        <div className="mx-auto bg-white  rounded-xl space-y-4">
+        <div className="mx-auto bg-white rounded-xl space-y-4">
           <div className="flex items-center space-x-4 mb-3">
             <Image
               src={image}
@@ -137,28 +173,69 @@ const MyBookingsModel = ({
           <div className="space-y-3 text-md">
             <p className="font-semibold">
               Booking For:{' '}
-              <span className="font-normal bg-blue-100 px-3 py-1  rounded-lg">
+              <span className="font-normal bg-blue-100 px-3 py-1 rounded-lg">
                 {bookingFor}
               </span>
             </p>
-            <p className="font-semibold">
-              Event Name: <span className="font-normal">{eventName}</span>
-            </p>
-            <p className="font-semibold">
-              Event Location:{' '}
-              <span className="font-normal">{eventLocation}</span>
-            </p>
-            <p className="font-semibold">
-              Event Time: <span className="font-normal">{eventTime}</span>
-            </p>
-            <p className="font-semibold">
-              Number of guests:{' '}
-              <span className="font-normal">{numberOfGuests}</span>
-            </p>
-            <p className="font-semibold">
-              Event Duration:{' '}
-              <span className="font-normal">{eventDuration}</span>
-            </p>
+
+            <div>
+              <p className="font-semibold">Event Name:</p>
+              {isEditing ? (
+                <Input
+                  value={editedEventName}
+                  onChange={(e) => setEditedEventName(e.target.value)}
+                />
+              ) : (
+                <span>{eventName}</span>
+              )}
+            </div>
+            <div>
+              <p className="font-semibold">Event Location:</p>
+              {isEditing ? (
+                <Input
+                  value={editedEventLocation}
+                  onChange={(e) => setEditedEventLocation(e.target.value)}
+                />
+              ) : (
+                <span>{eventLocation}</span>
+              )}
+            </div>
+            <div>
+              <p className="font-semibold">Event Time:</p>
+              {isEditing ? (
+                <Input
+                  value={editedEventTime}
+                  onChange={(e) => setEditedEventTime(e.target.value)}
+                />
+              ) : (
+                <span>{eventTime}</span>
+              )}
+            </div>
+            <div>
+              <p className="font-semibold">Number of guests:</p>
+              {isEditing ? (
+                <Input
+                  type="number"
+                  value={editedNumberOfGuests}
+                  onChange={(e) =>
+                    setEditedNumberOfGuests(Number(e.target.value))
+                  }
+                />
+              ) : (
+                <span>{numberOfGuests}</span>
+              )}
+            </div>
+            <div>
+              <p className="font-semibold">Event Duration:</p>
+              {isEditing ? (
+                <Input
+                  value={editedEventDuration}
+                  onChange={(e) => setEditedEventDuration(e.target.value)}
+                />
+              ) : (
+                <span>{eventDuration}</span>
+              )}
+            </div>
           </div>
 
           <div>
@@ -179,12 +256,28 @@ const MyBookingsModel = ({
             <p className="font-semibold">
               Additional Requirements or Services Needed:
             </p>
-            <p>{additionalRequirements}</p>
+            {isEditing ? (
+              <Input.TextArea
+                value={editedAdditionalRequirements}
+                onChange={(e) =>
+                  setEditedAdditionalRequirements(e.target.value)
+                }
+              />
+            ) : (
+              <p>{additionalRequirements}</p>
+            )}
           </div>
 
           <div className="text-gray-600 text-sm">
             <p className="font-semibold">Additional Note:</p>
-            <p>{additionalNote}</p>
+            {isEditing ? (
+              <Input.TextArea
+                value={editedAdditionalNote}
+                onChange={(e) => setEditedAdditionalNote(e.target.value)}
+              />
+            ) : (
+              <p>{additionalNote}</p>
+            )}
           </div>
 
           {amountPaid && (
@@ -197,7 +290,21 @@ const MyBookingsModel = ({
               <p>{timeLeft}</p>
             </div>
           )}
+
+          {isEditing && (
+            <button
+              className="w-full p-2 rounded-md hover:bg-blue-700 bg-blue-600 text-white mt-4"
+              onClick={handleSaveChanges}
+            >
+              Save Changes
+            </button>
+          )}
         </div>
+        {!isEditing && bookingType === 'requested' && (
+          <div className="text-end p-2 bg-blue-600 text-white cursor-pointer font-bold hover:bg-blue-800  flex items-center justify-center  rounded-md">
+            <div onClick={() => setIsEditing(true)}>Edit Request</div>
+          </div>
+        )}
       </Modal>
 
       <Modal
@@ -229,9 +336,6 @@ const MyBookingsModel = ({
               value={review}
               onChange={(e) => setReview(e.target.value)}
             />
-            <p className="text-gray-400 text-sm mt-1">
-              This is a hint text to help user.
-            </p>
           </div>
 
           <Button
