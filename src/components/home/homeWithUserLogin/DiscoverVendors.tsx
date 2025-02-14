@@ -67,7 +67,7 @@ const DiscoverVendors = () => {
       <div className="flex space-x-4 border-b border-gray-500 max-md:overflow-x-scroll overflow-hidden scrollbar-none">
         {categories.map((category) =>
           category === 'View All' ? (
-            <Link key={category} href="/user-vendors">
+            <Link key={category} href="/vendors">
               <button className="px-4 py-2 text-sm font-medium text-gray-700">
                 {category}
               </button>

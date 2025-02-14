@@ -42,11 +42,11 @@ const contentStyle: React.CSSProperties = {
   background: 'red !important',
 }
 
-const PopularVendorsCategory = () => (
+const TopTrendingService = () => (
   <div className="responsive-width ">
     <div className="mt-48 mb-20 ">
       <h2 className="text-center text-3xl font-bold mb-8 max-sm:mt-[400px]">
-        Popular Vendor category
+        Top trending service
       </h2>
 
       <Carousel
@@ -97,4 +97,4 @@ const PopularVendorsCategory = () => (
   </div>
 )
 
-export default PopularVendorsCategory
+export default TopTrendingService
