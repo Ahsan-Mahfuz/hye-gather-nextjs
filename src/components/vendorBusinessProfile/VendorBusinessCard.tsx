@@ -70,9 +70,12 @@ const VendorBusinessCard: React.FC<CardProps> = ({
       </div>
 
       <div className="flex flex-col items-center gap-4">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">
+        <Link
+          href={'/edit-profile'}
+          className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full"
+        >
           Edit business information
-        </button>
+        </Link>
         <div className="bg-blue-100 p-3 rounded-md w-full text-center">
           <p className="text-blue-600 text-sm font-medium">
             Be a Premium Vendor

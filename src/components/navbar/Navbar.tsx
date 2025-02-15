@@ -278,7 +278,10 @@ const Navbar = () => {
                   <Link href="/service" className={getLinkClass('/service')}>
                     Service
                   </Link>
-                  <Link href="/bookings" className={getLinkClass('/bookings')}>
+                  <Link
+                    href="/my-bookings"
+                    className={getLinkClass('/my-bookings')}
+                  >
                     Bookings
                   </Link>
                   <Link href="/chat" className={getLinkClass('/chat')}>
@@ -308,7 +311,7 @@ const Navbar = () => {
                       <ul className="space-y-2">
                         <li>
                           <Link
-                            href="/home"
+                            href="/vendor-home"
                             className={`p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
                             Home
@@ -316,10 +319,18 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link
-                            href="/vendors"
+                            href="/dashboard"
+                            className={`p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
+                          >
+                            Dashboard
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/service"
                             className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
-                            Vendors
+                            Service
                           </Link>
                         </li>
 
@@ -328,7 +339,7 @@ const Navbar = () => {
                             href="/my-bookings"
                             className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
-                            My Bookings
+                            Bookings
                           </Link>
                         </li>
                         <li>
