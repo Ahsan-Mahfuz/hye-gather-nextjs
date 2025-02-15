@@ -1,5 +1,7 @@
-import VendorBusinessCard from '@/components/vendorBusinessProfile/vendorBusinessCard'
-import React from 'react'
+import EarningStatics from '@/components/vendorBusinessProfile/EarningStatics'
+import ProVendorPlan from '@/components/vendorBusinessProfile/ProVendorPlan'
+import VendorBusinessCard from '@/components/vendorBusinessProfile/VendorBusinessCard'
+import VendorBusinessInformation from '@/components/vendorBusinessProfile/VendorBusinessInformation'
 
 type VendorBusinessData = {
   id: number
@@ -40,8 +42,11 @@ const vendorBusinessData: VendorBusinessData = {
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="responsive-width ">
       <VendorBusinessCard {...vendorBusinessData} />
+      <VendorBusinessInformation />
+      <EarningStatics />
+      <ProVendorPlan />
     </div>
   )
 }
