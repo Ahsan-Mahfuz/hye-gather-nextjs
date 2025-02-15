@@ -16,8 +16,9 @@ const Profile = () => {
     streetAddress: string
     pdf: File | null
     image: string | null
+    description: string | null
   }
-
+  const [userType, setUserType] = useState('vendor') // user, vendor
   const [activeTab, setActiveTab] = useState('profile')
   const [form] = Form.useForm()
   const [isEditing, setIsEditing] = useState(false)
@@ -33,6 +34,8 @@ const Profile = () => {
     streetAddress: 'Alice Street',
     pdf: null,
     image: null,
+    description: '',
+
   })
 
   const handleUpdate = () => {
@@ -160,6 +163,16 @@ const Profile = () => {
                   <Form.Item label="Contact Number" name="phone">
                     <Input disabled={!isEditing} className="h-[40px]" />
                   </Form.Item>
+                  {userType === 'vendor' && (
+                    <Form.Item label="Description" name="description">
+                      <textarea disabled={!isEditing} className="border rounded-md outline-none p-4 h-[150px] w-full" />
+                    </Form.Item>
+                  )}
+                  {userType === 'vendor' && (
+                    <Form.Item label="Starting Price" name="staringPrice">
+                      <Input disabled={!isEditing} className="h-[40px]"  placeholder='1000'/>
+                    </Form.Item>
+                  )}
                 </div>
 
                 <div className="flex justify-center mt-6">

@@ -13,7 +13,7 @@ import { usePathname } from 'next/navigation'
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  const [userType, setUserType] = useState('login-Normal') // Normal, login-Normal, login-Vendor
+  const [userType, setUserType] = useState('login-Vendor') // Normal, login-Normal, login-Vendor
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const getLinkClass = (path: string) =>

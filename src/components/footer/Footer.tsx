@@ -8,7 +8,6 @@ const Footer = () => {
   return (
     <footer className="bg-black  text-white py-8 poppins px-5 ">
       <div className=" mx-auto flex flex-col lg:flex-row justify-between responsive-width">
-        {/* Left Section */}
         <div className="flex flex-col mb-6 md:mb-0">
           <h2 className="text-3xl font-extrabold text-blue-700 viga">
             HYE GATHER
@@ -47,7 +46,6 @@ const Footer = () => {
           </section>
         </div>
 
-        {/* Explore Section */}
         <div className="flex flex-col mb-6 md:mb-0">
           <h3 className="font-semibold text-blue-500 text-xl">Explore</h3>
           <ul className="mt-5 flex flex-col gap-5 ">
@@ -69,7 +67,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Support Section */}
         <div className="flex flex-col mb-6 md:mb-0">
           <h3 className="font-semibold text-blue-500 text-xl">Support</h3>
           <ul className="mt-5 flex flex-col gap-5 ">

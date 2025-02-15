@@ -1,3 +1,4 @@
+'use client'
 import {
   User,
   Phone,
@@ -12,6 +13,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const menuItems = [
   {
@@ -20,11 +22,24 @@ const menuItems = [
     icon: <Settings className="w-5 h-5" />,
     link: '/account-settings',
   },
+  // {
+  //   id: 2,
+  //   title: 'Favorite Vendor',
+  //   icon: <Heart className="w-5 h-5" />,
+  //   link: '/favorite-vendors',
+  // },
+
   {
-    id: 2,
-    title: 'Favorite Vendor',
-    icon: <Heart className="w-5 h-5" />,
-    link: '/favorite-vendors',
+    id: 4,
+    title: 'My Subscription',
+    icon: <Bell className="w-5 h-5" />,
+    link: '/my-subscription',
+  },
+  {
+    id: 5,
+    title: 'Earnings',
+    icon: <Bell className="w-5 h-5" />,
+    link: '/earnings',
   },
   {
     id: 3,
@@ -62,6 +77,8 @@ const moreItems = [
 ]
 
 const ProfileSettings = () => {
+  const [profileType, setProfileType] = useState('vendor') // user, vendor
+
   return (
     <div className="responsive-width h-screen flex justify-center items-center ">
       <div className="max-w-[700px]  w-full mx-auto  rounded-lg   ">
@@ -90,16 +107,22 @@ const ProfileSettings = () => {
         </div>
 
         <div className="mt-6 bg-gray-100 p-3 rounded-lg ">
-          {menuItems.map((item) => (
-            <Link key={item.id} href={item.link}>
-              <div className="flex cursor-pointer justify-between items-center p-3 bg-white rounded-lg mb-2 shadow-sm hover:bg-gray-200">
-                <div className="flex items-center gap-3">
-                  {item.icon} {item.title}
+          {menuItems
+            .filter((item) =>
+              profileType === 'user'
+                ? item.title !== 'My Subscription' && item.title !== 'Earnings'
+                : true
+            )
+            .map((item) => (
+              <Link key={item.id} href={item.link}>
+                <div className="flex cursor-pointer justify-between items-center p-3 bg-white rounded-lg mb-2 shadow-sm hover:bg-gray-200">
+                  <div className="flex items-center gap-3">
+                    {item.icon} {item.title}
+                  </div>
+                  <span className="text-gray-400">{'>'}</span>
                 </div>
-                <span className="text-gray-400">{'>'}</span>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
         </div>
 
         <div className="mt-4 ">

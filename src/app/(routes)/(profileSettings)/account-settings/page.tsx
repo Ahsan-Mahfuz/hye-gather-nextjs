@@ -23,8 +23,8 @@ const AccountSettings = () => {
   }
   return (
     <div className="mt-10">
-      <div className="max-w-[700px] bg-gray-50 w-full flex flex-col gap-5  mx-auto  rounded-lg p-5">
-        <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg mb-1">
+      <div className="max-w-[700px] bg-gray-100 w-full flex flex-col gap-5  mx-auto  rounded-lg p-5">
+        <div className="flex items-center justify-between p-3 border bg-white hover:bg-gray-200 cursor-pointer rounded-lg mb-1">
           <div className="flex items-center space-x-3">
             <span className="text-gray-600">📢</span>
             <span className="text-sm font-medium text-gray-800">
@@ -46,7 +46,7 @@ const AccountSettings = () => {
 
         <div
           onClick={handleDeleteAccount}
-          className="flex items-center justify-between p-3 border border-gray-200 rounded-lg cursor-pointer"
+          className="flex items-center justify-between p-3 border bg-white hover:bg-gray-200   rounded-lg cursor-pointer"
         >
           <div className="flex items-center space-x-3">
             <span className="text-red-500">🚫</span>
