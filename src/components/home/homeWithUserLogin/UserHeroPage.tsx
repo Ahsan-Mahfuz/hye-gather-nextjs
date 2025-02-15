@@ -3,7 +3,6 @@ import Image from 'next/image'
 const UserHeroPage = () => {
   return (
     <div className="responsive-width flex flex-col xl:flex-row gap-10 items-center justify-between   ">
-      {/* Left Side - Text & Search */}
       <div className="max-w-xl mt-20">
         <h1 className="text-3xl font-bold text-gray-900">
           Plan Your Dream Event Effortlessly!
@@ -40,7 +39,6 @@ const UserHeroPage = () => {
         </div>
       </div>
 
-      {/* Right Side - Images */}
       <div className="flex flex-col gap-3 mt-20">
         <div className="flex justify-end max-md:items-center max-md:justify-center items-end gap-3">
           <Image
