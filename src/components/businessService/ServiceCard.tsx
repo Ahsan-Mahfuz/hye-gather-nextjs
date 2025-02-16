@@ -3,13 +3,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PiPlusCircleBold } from 'react-icons/pi'
-import { Modal, Button, Select, Upload, Input, message } from 'antd'
+import { Modal, Button, Select, Upload, message } from 'antd'
 import {
   UploadOutlined,
   DeleteOutlined,
-  ExclamationCircleOutlined,
 } from '@ant-design/icons'
-import { Modal as ConfirmModal } from 'antd'
 
 interface Service {
   id: number
@@ -38,6 +36,29 @@ const ServiceCard = () => {
     categories: [],
     images: [],
   })
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [deleteServiceId, setDeleteServiceId] = useState<number | null>(null)
+
+  const showDeleteConfirm = (id: number) => {
+    setDeleteServiceId(id)
+    setIsDeleteModalOpen(true)
+  }
+
+  const confirmDeleteService = () => {
+    if (deleteServiceId !== null) {
+      setServices((prev) =>
+        prev.filter((service) => service.id !== deleteServiceId)
+      )
+      message.success('Service deleted successfully')
+      setIsDeleteModalOpen(false)
+      setDeleteServiceId(null)
+    }
+  }
+
+  const cancelDeleteService = () => {
+    setIsDeleteModalOpen(false)
+    setDeleteServiceId(null)
+  }
 
   const addOrUpdateService = () => {
     if (!newService.serviceType)
@@ -46,12 +67,24 @@ const ServiceCard = () => {
     if (editServiceId !== null) {
       setServices(
         services.map((service) =>
-          service.id === editServiceId ? { ...service, ...newService } : service
+          service.id === editServiceId
+            ? { ...service, ...newService, id: service.id }
+            : service
         )
       )
     } else {
-      setServices([...services, { id: services.length + 1, ...newService }])
+      setServices([
+        ...services,
+        {
+          ...newService,
+          id:
+            services.length > 0
+              ? Math.max(...services.map((s) => s.id)) + 1
+              : 1,
+        },
+      ])
     }
+
     setNewService({
       id: 0,
       serviceType: '',
@@ -62,18 +95,6 @@ const ServiceCard = () => {
     setEditServiceId(null)
   }
 
-  const deleteService = (id: number) => {
-    ConfirmModal.confirm({
-      title: 'Are you sure you want to delete this service?',
-      icon: <ExclamationCircleOutlined />,
-      okText: 'Yes',
-      cancelText: 'No',
-      onOk: () => {
-        setServices(services.filter((service) => service.id !== id))
-        message.success('Service deleted successfully')
-      },
-    })
-  }
 
   const handleImageUpload = (file: File) => {
     const url = URL.createObjectURL(file)
@@ -90,14 +111,14 @@ const ServiceCard = () => {
         >
           <Link
             href={`/service/${service.id}`}
-            className="flex-shrink-0 w-full sm:w-48"
+            className="flex-shrink-0 w-full sm:w-48 "
           >
             <Image
               src={service.images[0] || '/placeholder.jpg'}
               alt="service image"
-              width={200}
+              width={5000}
               height={150}
-              className="rounded-md object-cover w-full h-full"
+              className="rounded-md object-cover object-center max-sm:w-full w-[200px] h-[200px]"
             />
           </Link>
           <div className="flex-1">
@@ -110,7 +131,7 @@ const ServiceCard = () => {
             <p className="text-gray-800 font-medium text-sm mt-2">
               Categories:
             </p>
-            <div className="flex gap-2 mt-1 flex-wrap">
+            <div className="flex gap-2 mt-1 flex-wrap mb-6">
               {service.categories.map((category, index) => (
                 <span
                   key={index}
@@ -123,10 +144,10 @@ const ServiceCard = () => {
           </div>
           <Button
             type="text"
-            onClick={() => deleteService(service.id)}
-            className="absolute top-2 right-2 text-red-500"
+            onClick={() => showDeleteConfirm(service.id)}
+            className="absolute bottom-1 left-5    "
           >
-            <DeleteOutlined />
+            <DeleteOutlined className=" rounded-md text-white hover:bg-white hover:text-black bg-red-500 px-5 py-3" />
           </Button>
           <Button
             type="text"
@@ -135,9 +156,11 @@ const ServiceCard = () => {
               setEditServiceId(service.id)
               setShowModal(true)
             }}
-            className="absolute top-2 right-10 bg-gray-300"
+            className="absolute bottom-1  left-20 sm:bottom-1 sm:left-20    "
           >
-            Edit
+            <div className=" rounded-md text-white hover:bg-white hover:text-black bg-blue-800 px-5 py-2">
+              Edit
+            </div>
           </Button>
         </div>
       ))}
@@ -173,11 +196,11 @@ const ServiceCard = () => {
       >
         <Select
           className="w-full mb-2 h-[36px]"
-          placeholder="Select Service Categories"
+          placeholder="Select Service Type"
           onChange={(value) =>
             setNewService({ ...newService, serviceType: value })
           }
-          value={newService.serviceType}
+          value={newService.serviceType || undefined}
         >
           {serviceTypes.map((item) => (
             <Select.Option key={item.id} value={item.name}>
@@ -210,6 +233,18 @@ const ServiceCard = () => {
         >
           {editServiceId ? 'Update Service' : 'Add New Service'}
         </Button>
+      </Modal>
+
+      <Modal
+        title="Confirm Delete"
+        open={isDeleteModalOpen}
+        onOk={confirmDeleteService}
+        onCancel={cancelDeleteService}
+        okText="Yes"
+        cancelText="No"
+        centered
+      >
+        <p>Are you sure you want to delete this service?</p>
       </Modal>
     </div>
   )

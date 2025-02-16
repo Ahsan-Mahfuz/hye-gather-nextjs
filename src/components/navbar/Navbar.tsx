@@ -1,11 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Logout from '../logout/Logout'
 import { Menu, X } from 'lucide-react'
-import { FaRegUser } from 'react-icons/fa'
-import { IoIosArrowDown } from 'react-icons/io'
-import { IoNotificationsOutline } from 'react-icons/io5'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -13,8 +9,7 @@ import { usePathname } from 'next/navigation'
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  const [userType, setUserType] = useState('login-Normal') // Normal, login-Normal, login-Vendor
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [userType, setUserType] = useState('login-Vendor') // Normal, login-Normal, login-Vendor
 
   const getLinkClass = (path: string) =>
     pathname === path
@@ -279,8 +274,8 @@ const Navbar = () => {
                     Service
                   </Link>
                   <Link
-                    href="/my-bookings"
-                    className={getLinkClass('/my-bookings')}
+                    href="/vendor-bookings"
+                    className={getLinkClass('/vendor-bookings')}
                   >
                     Bookings
                   </Link>
@@ -336,7 +331,7 @@ const Navbar = () => {
 
                         <li>
                           <Link
-                            href="/my-bookings"
+                            href="/vendor-bookings"
                             className={` p-2 hover:underline hover:underline-offset-8 hover:decoration-black cursor-pointer`}
                           >
                             Bookings
