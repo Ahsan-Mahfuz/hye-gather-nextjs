@@ -50,10 +50,10 @@ const ChatApp = () => {
   }
 
   return (
-    <div className=' '>
-      <div className="flex border p-2 responsive-width">
+    <div className='h-screen '>
+      <div className="flex h-[calc(100vh-100px)] max-xl:relative border p-2 responsive-width">
         {sidebarOpen && (
-          <div className="w-[600px] border-r py-2 px-2 h-[650px]  max-xl:w-full max-xl:fixed max-xl:h-full max-xl:bg-white ">
+          <div className="w-[400px] border-r py-2 px-2  max-xl:w-full max-xl:absolute max-xl:h-full max-xl:bg-white ">
             <div className="relative mb-4 ">
               <FiSearch className="absolute left-3 top-3 text-gray-500" />
               <input
