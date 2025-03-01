@@ -48,7 +48,7 @@ const RoleSelection = () => {
             href={{ pathname: '/sign-up', query: { role: 'vendor' } }}
           >
             <button className="mt-10 cursor-pointer w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
-              I'M A VENDOR
+              I&apos;M A VENDOR
             </button>
           </Link>
         </div>
@@ -89,7 +89,7 @@ const RoleSelection = () => {
             href={{ pathname: '/sign-up', query: { role: 'customer' } }}
           >
             <button className="mt-10 cursor-pointer w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
-              I'M A CUSTOMER
+              I&apos;M A CUSTOMER
             </button>
           </Link>
         </div>

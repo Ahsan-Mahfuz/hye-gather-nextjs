@@ -13,7 +13,7 @@ const eventData = [
       'Customized playlists for every occasion.',
       'Seamless booking process.',
     ],
-    image: '/DJs.jpg',
+    image: '/dJs.jpg',
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const eventData = [
       'Packages for all event types.',
       'Quick and easy booking process.',
     ],
-    image: '/Photography.jpg',
+    image: '/photography.jpg',
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ const eventData = [
       'Customizable drink menus to suit any occasion.',
       'High-quality ingredients and premium liquors.',
     ],
-    image: '/Bar.jpg',
+    image: '/bar.jpg',
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const eventData = [
       'Professional and reliable performers.',
       'Perfect for all event sizes and themes.',
     ],
-    image: '/Entertainment.jpg',
+    image: '/entertainment.jpg',
   },
   {
     id: 7,
@@ -91,7 +91,7 @@ const eventData = [
       'High-quality materials and innovative designs.',
       'On-time setup and seamless execution.',
     ],
-    image: '/Decorations.jpg',
+    image: '/decorations.jpg',
   },
 ]
 

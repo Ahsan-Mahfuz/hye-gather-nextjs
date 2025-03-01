@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import logo from '../../../assets/logo.svg'
-import { Link, useLocation } from 'react-router-dom'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const NavbarUser = () => {
-  const location = useLocation()
+  const pathname = usePathname()
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   return (
     <nav className="flex items-center justify-between p-4 poppins z-10">
-      <Link to={'/'} className="flex items-center gap-2">
-        <img src={logo} alt="Logo" />
+      <Link href={'/'} className="flex items-center gap-2">
+        <Image src={logo} alt="Logo" />
         <div className="text-3xl font-extrabold text-blue-800 poppins">
           HYE GATHER
         </div>
@@ -18,9 +20,9 @@ const NavbarUser = () => {
       <ul className="flex space-x-6 items-center">
         <li>
           <Link
-            to={'/user/home'}
+            href={'/user/home'}
             className={
-              location.pathname === '/user/home'
+              pathname === '/user/home'
                 ? 'text-lg font-semibold text-blue-800 underline underline-offset-4 decoration-2'
                 : 'text-lg font-semibold text-gray-800 hover:text-blue-800 hover:underline hover:underline-offset-4 hover:decoration-2'
             }
@@ -30,7 +32,7 @@ const NavbarUser = () => {
         </li>
         <li>
           <Link
-            to={'/user/vendors'}
+            href={'/user/vendors'}
             className={
               location.pathname === '/user/vendors'
                 ? 'text-lg font-semibold text-blue-800 underline underline-offset-4 decoration-2'
@@ -42,7 +44,7 @@ const NavbarUser = () => {
         </li>
         <li>
           <Link
-            to={'/user/my-bookings'}
+            href={'/user/my-bookings'}
             className={
               location.pathname === '/user/my-bookings'
                 ? 'text-lg font-semibold text-blue-800 underline underline-offset-4 decoration-2'
@@ -54,7 +56,7 @@ const NavbarUser = () => {
         </li>
         <li>
           <Link
-            to={'/user/messages'}
+            href={'/user/messages'}
             className={
               location.pathname === '/user/messages'
                 ? 'text-lg font-semibold text-blue-800 underline underline-offset-4 decoration-2'
@@ -74,19 +76,19 @@ const NavbarUser = () => {
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-40 bg-white  overflow-hidden">
               <Link
-                to={'/user/profile'}
+                href={'/user/profile'}
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
               >
                 Profile
               </Link>
               <Link
-                to={'/user/settings'}
+                href={'/user/settings'}
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
               >
                 Settings
               </Link>
               <Link
-                to={'/user/notifications'}
+                href={'/user/notifications'}
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
               >
                 Notifications

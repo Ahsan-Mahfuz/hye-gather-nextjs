@@ -18,27 +18,27 @@ const EventMarketplace = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  h-[200px]">
-          <div className="bg-white p-6 rounded-lg shadow-md border text-center">
+          <div className=" p-6 rounded-lg shadow-md border text-center bg-gray-100">
             <FaQuestionCircle className="text-4xl text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold">50,000+</h3>
+            <h3 className="text-3xl font-semibold">500+</h3>
             <p className="text-gray-500">event inquiries processed</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md border text-center">
+          <div className=" p-6 rounded-lg shadow-md border text-center bg-gray-100">
             <FaDollarSign className="text-4xl text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold">$5M+</h3>
+            <h3 className="text-3xl font-semibold">$50k+</h3>
             <p className="text-gray-500">in transactions secured</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md border text-center">
+          <div className=" p-6 rounded-lg shadow-md border text-center bg-gray-100">
             <FaStar className="text-4xl text-yellow-600 mb-4" />
-            <h3 className="text-xl font-semibold">5,000+</h3>
+            <h3 className="text-3xl font-semibold">300+</h3>
             <p className="text-gray-500">vendors offering premium services</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md border text-center">
+          <div className=" p-6 rounded-lg shadow-md border text-center bg-gray-100">
             <FaCalendarCheck className="text-4xl text-purple-600 mb-4" />
-            <h3 className="text-xl font-semibold">100K+</h3>
+            <h3 className="text-3xl font-semibold">1.5K+</h3>
             <p className="text-gray-500">successful events planned</p>
           </div>
         </div>

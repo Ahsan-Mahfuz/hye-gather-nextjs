@@ -12,15 +12,15 @@ interface CardProps {
   phone: string
   bookingFor: string
   selectServices: string[]
-  eventName: string
-  eventLocation: string
-  eventTime: string
-  numberOfGuests: number
-  eventDuration: string
-  additionalRequirements: string
-  additionalNote: string
-  amountPaid: string
-  timeLeft: string
+  eventName?: string
+  eventLocation?: string
+  eventTime?: string
+  numberOfGuests?: number
+  eventDuration?: string
+  additionalRequirements?: string
+  additionalNote?: string
+  amountPaid?: string
+  timeLeft?: string
 }
 
 const MyBookingsCard: React.FC<CardProps> = ({

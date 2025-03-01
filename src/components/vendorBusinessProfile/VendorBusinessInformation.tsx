@@ -4,16 +4,16 @@ const VendorBusinessInformation = () => {
   const stats = [
     {
       id: 1,
-      label: 'New Booking Request',
+      label: 'New Booking Requests',
       value: 10,
       icon: '/new-booking.svg',
     },
-    { id: 2, label: 'Total Service', value: '03', icon: '/total-service.svg' },
-    { id: 3, label: 'Total Booking', value: 1000, icon: '/total-booking.svg' },
-    { id: 4, label: 'Total Rating', value: 144061, icon: '/total-rating.svg' },
+    { id: 2, label: 'Total Services', value: '03', icon: '/total-service.svg' },
+    { id: 3, label: 'Total Bookings', value: 1000, icon: '/total-booking.svg' },
+    { id: 4, label: 'Total Ratings', value: 144061, icon: '/total-rating.svg' },
     {
       id: 5,
-      label: 'Total Earning',
+      label: 'Total Earnings',
       value: '$144061',
       icon: '/total-earning.svg',
     },

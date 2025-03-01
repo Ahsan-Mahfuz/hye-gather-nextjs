@@ -49,7 +49,7 @@ const Clients: Client = [
   {
     id: 2,
     bookingType: 'requested',
-    image: '/DJs.jpg',
+    image: '/dJs.jpg',
     name: 'Jasmine Lawrence',
     email: 'example@example.com',
     phone: '+1 234 567 890',
@@ -70,7 +70,7 @@ const Clients: Client = [
   {
     id: 3,
     bookingType: 'paymentRequest',
-    image: '/Bar.jpg',
+    image: '/bar.jpg',
     name: 'Michael Smith',
     email: 'example@example.com',
     phone: '+1 234 567 891',
@@ -113,7 +113,7 @@ const Clients: Client = [
   {
     id: 5,
     bookingType: 'canceled',
-    image: '/Photography.jpg',
+    image: '/photography.jpg',
     name: 'Liam Johnson',
     email: 'example@example.com',
     phone: '+1 234 567 893',
@@ -177,7 +177,7 @@ const MyBookings = () => {
     },
     {
       key: '3',
-      label: <div className="text-red-700">Payment Request</div>,
+      label: <div className="text-red-700">Booking Request</div>,
       children: (
         <div>
           <div className="text-lg font-semibold ">Your Ongoing Activities</div>
@@ -194,7 +194,7 @@ const MyBookings = () => {
     },
     {
       key: '4',
-      label: 'Completed',
+      label: 'Bookings',
       children: (
         <div>
           <div className="text-lg font-semibold ">Your Ongoing Activities</div>

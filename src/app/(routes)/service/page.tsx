@@ -1,4 +1,3 @@
-import AddServiceCard from '@/components/businessService/AddService'
 import ServiceCard from '@/components/businessService/ServiceCard'
 
 const page = () => {

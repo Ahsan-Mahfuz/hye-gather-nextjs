@@ -19,12 +19,12 @@ const TestimonialData = [
   },
   {
     id: 4,
-    img: '/djs.jpg',
+    img: '/dJs.jpg',
     name: 'DJs',
   },
   {
     id: 5,
-    img: '/Bar.jpg',
+    img: '/bar.jpg',
     name: 'Bars',
   },
   {
