@@ -42,12 +42,12 @@ const DiscoverVendors = () => {
       { id: 7, image: '/venues.jpg', title: 'Venue 2' },
     ],
     DJs: [
-      { id: 8, image: '/djs.jpg', title: 'DJ 1' },
-      { id: 9, image: '/djs.jpg', title: 'DJ 2' },
+      { id: 8, image: '/dJs.jpg', title: 'DJ 1' },
+      { id: 9, image: '/dJs.jpg', title: 'DJ 2' },
     ],
     Bars: [
-      { id: 10, image: '/Bar.jpg', title: 'Bar 1' },
-      { id: 11, image: '/Bar.jpg', title: 'Bar 2' },
+      { id: 10, image: '/bar.jpg', title: 'Bar 1' },
+      { id: 11, image: '/bar.jpg', title: 'Bar 2' },
     ],
     Food: [
       { id: 12, image: '/food.jpg', title: 'Food 1' },

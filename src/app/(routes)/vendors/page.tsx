@@ -32,7 +32,7 @@ const vendors: Vendor = [
   },
   {
     id: 2,
-    logo: '/DJs.jpg',
+    logo: '/dJs.jpg',
     name: 'DJs',
     rating: 4.0,
     reviews: 150,

@@ -26,11 +26,11 @@ const VendorTabs = () => {
   }
 
   const images = [
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
-    '/Entertainment.jpg',
+    '/entertainment.jpg',
+    '/entertainment.jpg',
+    '/entertainment.jpg',
+    '/entertainment.jpg',
+    '/entertainment.jpg',
   ]
 
   const tabItems = [
@@ -45,7 +45,7 @@ const VendorTabs = () => {
             events of all sizes. We offer a diverse menu featuring fresh,
             high-quality ingredients, ensuring a delightful culinary experience.
             From weddings to corporate gatherings, our team delivers exceptional
-            service with customizable options to match your event's needs.
+            service with customizable options to match your event&apos;s needs.
           </p>
           <div className="mt-4">
             <strong className="text-lg font-semibold ">Overview</strong>
@@ -68,21 +68,21 @@ const VendorTabs = () => {
           <div className="text-lg font-semibold ">Photos</div>
           <div className="flex gap-5 items-center justify-start flex-wrap mt-4">
             <Image
-              src="/Entertainment.jpg"
+              src="/entertainment.jpg"
               alt="entertainment"
               className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
               height={100}
             />
             <Image
-              src="/Entertainment.jpg"
+              src="/entertainment.jpg"
               alt="entertainment"
               className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
               height={100}
             />
             <Image
-              src="/Entertainment.jpg"
+              src="/entertainment.jpg"
               alt="entertainment"
               className=" max-w-[200px] w-full object-cover object-center rounded-lg"
               width={4000}
@@ -108,7 +108,7 @@ const VendorTabs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5  mt-4">
             <div className="flex flex-col items-center">
               <Image
-                src="/Entertainment.jpg"
+                src="/entertainment.jpg"
                 alt="entertainment"
                 className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
                 width={4000}
@@ -118,7 +118,7 @@ const VendorTabs = () => {
             </div>
             <div className="flex flex-col items-center">
               <Image
-                src="/Entertainment.jpg"
+                src="/entertainment.jpg"
                 alt="entertainment"
                 className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
                 width={4000}
@@ -128,7 +128,7 @@ const VendorTabs = () => {
             </div>
             <div className="flex flex-col items-center">
               <Image
-                src="/Entertainment.jpg"
+                src="/entertainment.jpg"
                 alt="entertainment"
                 className="max-sm:max-w-[200px] max-w-[250px] w-full object-cover object-center rounded-lg"
                 width={4000}

@@ -8,7 +8,7 @@ const CustomizeEvent = () => {
         <div className="flex flex-col items-center lg:w-1/2 space-y-4 lg:items-start">
           <div className="relative w-full ">
             <Image
-              src="/Decorations.jpg"
+              src="/decorations.jpg"
               alt="Decorations"
               className="rounded-lg shadow-xl w-full h-auto"
               width={5000}

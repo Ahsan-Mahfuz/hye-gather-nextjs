@@ -66,7 +66,7 @@ const Card: React.FC<CardProps> = ({
       <div className="flex flex-col">
         <p className="text-sm text-gray-600">{bookings} Bookings on HYE</p>
         <p className="text-md font-semibold">
-          Start Work At <span className="text-black">${price}</span>
+          Get started for as low as <span className="text-black">${price}</span>
         </p>
         <Link
           href={`/vendor-details/${id}`}

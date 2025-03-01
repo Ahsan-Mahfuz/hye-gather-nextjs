@@ -62,8 +62,8 @@ const Subscription = () => {
             </h3>
 
             <p className="text-2xl font-bold  text-blue-600 mt-2">
-              ${plan === 'monthly' ? '29' : '290'}
-              {plan === 'monthly' ? '/month' : '/year'}
+              ${plan === 'monthly' ? '34.99' : '69.99'}
+              /month
             </p>
 
             <ul className="mt-4 space-y-2">

@@ -42,14 +42,14 @@ const UserHeroPage = () => {
       <div className="flex flex-col gap-3 mt-20">
         <div className="flex justify-end max-md:items-center max-md:justify-center items-end gap-3">
           <Image
-            src="/DJs.jpg"
+            src="/dJs.jpg"
             alt="Bartender"
             className="max-w-72 w-full h-72 rounded-lg shadow-md object-cover"
             width={5000}
             height={50}
           />
           <Image
-            src="/Bar.jpg"
+            src="/bar.jpg"
             alt="DJ"
             className="max-w-52 w-full h-52 rounded-lg shadow-md object-cover max-md:hidden "
             width={5000}
@@ -65,7 +65,7 @@ const UserHeroPage = () => {
             height={50}
           />
           <Image
-            src="/Photography.jpg"
+            src="/photography.jpg"
             alt="Photographer"
             className="max-w-72 w-full h-72  rounded-lg shadow-md object-cover "
             width={5000}

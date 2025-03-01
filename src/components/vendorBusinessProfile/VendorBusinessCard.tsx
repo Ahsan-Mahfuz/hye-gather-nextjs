@@ -47,7 +47,8 @@ const VendorBusinessCard: React.FC<CardProps> = ({
             </div>
             <p className="text-blue-600 text-sm font-medium">{vendorType}</p>
             <p className="mt-1 font-semibold">
-              Start Work At <span className="text-black">${startPrice}</span>
+              Get started for as low as{' '}
+              <span className="text-black">${startPrice}</span>
             </p>
             <p className="text-gray-800 font-medium text-sm mt-2">
               MY service category:

@@ -11,7 +11,7 @@ const AskedQuestionWithAnswer = dynamic(
 )
 const FrequentlyAskedQuestion = () => {
   return (
-    <div className="responsive-width " id='faq'>
+    <div className="responsive-width " id="faq">
       <div className="  mt-40 rounded-lg flex  flex-col justify-center">
         <h2 className="text-3xl mb-10 font-bold text-center max-md:text-2xl">
           Most Frequently Asked Questions
@@ -21,7 +21,7 @@ const FrequentlyAskedQuestion = () => {
 
           <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-xl font-bold mb-4">
-              Want to Know More? Contact Us!
+              Have questions? Get in touch with us!
             </h3>
             <p className="text-gray-600 mb-4">
               If you have more questions or need further assistance, feel free
@@ -60,7 +60,7 @@ const FrequentlyAskedQuestion = () => {
             href="mailto:hello@sassiii.com"
             className="text-white p-4 max-md:text-xs rounded-lg poppins  bg-blue-800 hover:bg-blue-700 max-lg:text-sm transition-all duration-300"
           >
-            Let's Mail Us →
+            Let&apos;s Mail Us →
           </Link>
         </div>
       </div>

@@ -114,7 +114,7 @@ const SignIn = () => {
           </Form.Item>
         </Form>
         <div className="  text-gray-600 text-xs">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <Link
             href={`/choose-role`}
             className=" hover:underline text-blue-800"

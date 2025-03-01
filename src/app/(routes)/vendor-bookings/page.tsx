@@ -50,7 +50,7 @@ const Clients: Client = [
   {
     id: 2,
     bookingType: 'requested',
-    image: '/DJs.jpg',
+    image: '/dJs.jpg',
     name: 'Jasmine Lawrence',
     email: 'example@example.com',
     phone: '+1 234 567 890',
@@ -71,7 +71,7 @@ const Clients: Client = [
   {
     id: 3,
     bookingType: 'paymentRequest',
-    image: '/Bar.jpg',
+    image: '/bar.jpg',
     name: 'Michael Smith',
     email: 'example@example.com',
     phone: '+1 234 567 891',
@@ -114,7 +114,7 @@ const Clients: Client = [
   {
     id: 5,
     bookingType: 'canceled',
-    image: '/Photography.jpg',
+    image: '/photography.jpg',
     name: 'Liam Johnson',
     email: 'example@example.com',
     phone: '+1 234 567 893',

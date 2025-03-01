@@ -34,7 +34,7 @@ export default function VendorPlan() {
             height={50}
           />
           <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-md font-semibold">
-            $99/mo
+            $69.99/mo
           </span>
         </div>
 

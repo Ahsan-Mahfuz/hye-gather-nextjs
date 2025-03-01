@@ -5,11 +5,11 @@ const VendorHeroPage = () => {
   return (
     <div className="responsive-width flex flex-col xl:flex-row gap-10 items-center justify-between   ">
       {/* Left Side - Text & Search */}
-      <div className="max-w-xl mt-20">
+      <div className="max-w-[600px] mt-20">
         <h1 className="text-3xl font-bold text-gray-900">
-          Grow Your Business with Us!
+          Expand your business with Hye Gather
         </h1>
-        <p className="text-gray-700 mt-3">
+        <p className="text-gray-700 mt-3 text-justify">
           Connect with clients, showcase your services, and manage your bookings
           effortlessly. Join our platform to reach more customers and streamline
           your event services.
@@ -43,14 +43,14 @@ const VendorHeroPage = () => {
       <div className="flex flex-col gap-3 mt-20">
         <div className="flex justify-end max-md:items-center max-md:justify-center items-end gap-3">
           <Image
-            src="/DJs.jpg"
+            src="/dJs.jpg"
             alt="Bartender"
             className="max-w-72 w-full h-72 rounded-lg shadow-md object-cover"
             width={5000}
             height={50}
           />
           <Image
-            src="/Bar.jpg"
+            src="/bar.jpg"
             alt="DJ"
             className="max-w-52 w-full h-52 rounded-lg shadow-md object-cover max-md:hidden "
             width={5000}
@@ -66,7 +66,7 @@ const VendorHeroPage = () => {
             height={50}
           />
           <Image
-            src="/Photography.jpg"
+            src="/photography.jpg"
             alt="Photographer"
             className="max-w-72 w-full h-72  rounded-lg shadow-md object-cover "
             width={5000}
